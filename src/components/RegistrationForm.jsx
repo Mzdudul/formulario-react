@@ -5,15 +5,7 @@ export default function RegistrationForm() {
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
 
-  const validate = () => {
-    const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = "Nome é obrigatório";
-    if (!formData.email.trim()) newErrors.email = "Email é obrigatório";
-    else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = "Email inválido";
-    if (!formData.password) newErrors.password = "Senha é obrigatória";
-    else if (formData.password.length < 6) newErrors.password = "Senha deve ter ao menos 6 caracteres";
-    return newErrors;
-  };
+ 
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
